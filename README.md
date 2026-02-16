@@ -56,13 +56,27 @@ Ce projet est statique, il ne nécessite aucun backend ni compilation.
 ---
 
 ## 📂 Structure du Projet
-simulation_nexus/
-├── index.html          # Le Hub Central (Portail)
-├── lifeGame/           # Module Jeu de la Vie
-├── paradoxBraess/      # Module Trafic
-├── turing/             # Module Chimie
-└── assets/             # Images et ressources partagées
 
+```text
+simulation_nexus/
+├── index.html           # Le Hub Central (Portail)
+├── creator.html         # Page Créateur Globale
+├── style_hub.css        # Styles du Hub
+├── lifeGame/            # Module Jeu de la Vie
+│   ├── life.html
+│   ├── script_life.js
+│   └── style_life.css
+├── paradoxBraess/       # Module Trafic (Braess)
+│   ├── braess.html
+│   ├── braess_info.html
+│   ├── script_braess.js
+│   └── style_braess.css
+└── turing/              # Module Chimie (Réaction-Diffusion)
+    ├── reaction.html
+    ├── rd_info.html
+    ├── script_rd.js
+    └── style_rd.css
+```
 ---
 
 ## 👤 Auteur
