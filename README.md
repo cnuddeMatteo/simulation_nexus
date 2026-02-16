@@ -1,11 +1,11 @@
 # 🌐 SIMULATION_NEXUS
 
-![Project Banner](https://via.placeholder.com/1000x300/050505/00ff9d?text=SIMULATION_NEXUS)
+![Project Banner]()
 > **Exploration Algorithmique & Systèmes Complexes**
 
 **Simulation_Nexus** est un portfolio interactif regroupant trois expériences visuelles basées sur les mathématiques, la biologie et la théorie des jeux. Ce projet démontre comment des règles locales simples peuvent engendrer des comportements globaux complexes (émergence).
 
-🔗 **[Voir la Démo en Live](LIEN_VERS_TA_PAGE_GITHUB_PAGES)**
+🔗 **[Mon profil](https://github.com/cnuddeMatteo)**
 
 ---
 
