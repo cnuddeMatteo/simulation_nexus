@@ -56,3 +56,24 @@ Ce projet est statique, il ne nécessite aucun backend ni compilation.
 ---
 
 ## 📂 Structure du Projet
+simulation_nexus/
+├── index.html          # Le Hub Central (Portail)
+├── lifeGame/           # Module Jeu de la Vie
+├── paradoxBraess/      # Module Trafic
+├── turing/             # Module Chimie
+└── assets/             # Images et ressources partagées
+
+---
+
+## 👤 Auteur
+
+**Mattéo Cnudde** - *Architecte Numérique & Explorateur de Systèmes*
+
+Passionné par l'intersection entre le code, les mathématiques et la nature.
+
+* [GitHub](https://github.com/cnuddeMatteo)
+* [Buy Me A Coffee](https://buymeacoffee.com/spunnn)
+
+---
+
+> *"L'ordre naît du chaos."*
