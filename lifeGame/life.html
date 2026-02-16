@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bio-Digital Simulation</title>
+    <link rel="stylesheet" href="style_life.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <canvas id="life-canvas"></canvas>
+
+    <div class="overlay-ui">
+        
+        <div class="header">
+    <h1 class="neon-title">BIO-DIGITAL <span class="pulse">LIFE</span></h1>
+    <div class="stats">
+        <span>Génération: <b id="gen-count">0</b></span>
+        <span>Population: <b id="pop-count">0</b></span>
+    </div>
+    
+    <div style="margin-top: 15px;">
+        <a href="../index.html" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; border: 1px solid var(--accent); padding: 5px 15px; border-radius: 15px; transition: 0.3s;">
+            <i class="fas fa-th-large"></i> Mes autres projets
+        </a>
+    </div>
+</div>
+
+        <div class="controls-bottom">
+            <button onclick="toggleSim()" id="btn-play"><i class="fas fa-play"></i> Lancer</button>
+            <button onclick="randomize()"><i class="fas fa-random"></i> Chaos</button>
+            <button onclick="clearGrid()"><i class="fas fa-trash"></i> Vider</button>
+            
+            <div class="separator"></div>
+
+            <div class="speed-control">
+                <label><i class="fas fa-tachometer-alt"></i> Vitesse</label>
+                <input type="range" id="speed-range" min="1" max="60" value="30">
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="preset-control">
+                <select id="preset-select">
+                    <option value="" disabled selected>Choisis un modèle...</option>
+                    <option value="glider">🚀 Le Planeur (Glider)</option>
+                    <option value="lwss">🛸 Vaisseau Léger (LWSS)</option>
+                    <option value="pulsar">🌟 Le Pulsar (Oscillateur)</option>
+                    <option value="gosper">🔫 Canon à Planeurs de Gosper</option>
+                    <option value="diehard">💀 Diehard (Disparition lente)</option>
+                </select>
+                <button onclick="loadSelectedPreset()">Charger</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script_life.js"></script>
+</body>
+</html>

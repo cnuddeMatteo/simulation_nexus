@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Comprendre la Morphogenèse</title>
+    <link rel="stylesheet" href="style_rd.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- CORRECTION DU SCROLL --- */
+        /* On écrase le style global qui empêche de scroller */
+        body {
+            overflow-y: auto !important; 
+            height: auto !important;
+            padding-bottom: 50px; /* Espace pour le bouton en bas */
+        }
+
+        /* L'overlay n'est plus fixe mais suit le flux */
+        .overlay-page-static {
+            position: relative; /* Changement crucial */
+            height: auto;
+            overflow: visible;
+            padding: 20px 0 60px 0;
+        }
+
+        /* Styles de la carte */
+        .info-card {
+            background: var(--ui-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto; /* Centrage */
+            box-shadow: 0 0 50px rgba(6, 182, 212, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Onglets */
+        .tab-container { 
+            display: flex; 
+            justify-content: center; 
+            gap: 10px; 
+            margin-bottom: 30px; 
+            flex-wrap: wrap; 
+        }
+        
+        .tab-btn { 
+            background: transparent; 
+            border: 1px solid #334155; 
+            color: #94a3b8; 
+            padding: 10px 20px; 
+            border-radius: 30px; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            font-size: 0.9rem;
+        }
+        
+        .tab-btn.active { 
+            background: var(--accent); 
+            color: #000; 
+            border-color: var(--accent); 
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.4); 
+        }
+        
+        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+
+        /* Typographie */
+        h2 { color: var(--accent); border-bottom: 1px solid var(--accent-dim); padding-bottom: 10px; margin-top: 0; }
+        p, li { line-height: 1.7; color: #cbd5e1; }
+        .highlight { color: #fff; font-weight: bold; }
+
+        /* Diagrammes et Formules */
+        .formula-box {
+            background: rgba(0,0,0,0.4);
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            border: 1px solid var(--accent-dim);
+            margin: 25px 0;
+            color: #fff;
+            font-size: 1.1rem;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .variable-list {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px 20px;
+            background: rgba(255,255,255,0.03);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        .var-name { color: var(--accent); font-weight: bold; font-family: monospace; }
+
+        /* Carte de Phase */
+        .phase-map {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #020617 0%, #0e7490 100%);
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .axis-label { position: absolute; color: var(--accent); font-size: 0.8rem; font-weight: bold; }
+        .axis-y { top: 10px; left: 10px; writing-mode: vertical-rl; transform: rotate(180deg); }
+        .axis-x { bottom: 10px; right: 10px; }
+        
+        .zone-marker {
+            position: absolute; width: 12px; height: 12px;
+            background: #fff; border-radius: 50%;
+            box-shadow: 0 0 10px #fff;
+            transform: translate(-50%, -50%);
+        }
+        .zone-label {
+            position: absolute; color: #fff; font-size: 0.8rem;
+            transform: translate(-50%, -150%);
+            text-shadow: 0 0 5px #000; white-space: nowrap; font-weight: bold;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <div class="overlay-page-static">
+        <div class="info-card">
+            
+            <div class="header">
+                <h1 class="neon-title" style="font-size: 2rem;">LE CODE DE LA NATURE</h1>
+                <div class="subtitle">Alan Turing & Gray-Scott</div>
+            </div>
+
+            <div class="tab-container">
+                <button class="tab-btn active" onclick="openTab('history')"><i class="fas fa-history"></i> L'Origine</button>
+                <button class="tab-btn" onclick="openTab('params')"><i class="fas fa-sliders-h"></i> Paramètres</button>
+                <button class="tab-btn" onclick="openTab('maths')"><i class="fas fa-square-root-alt"></i> Équations</button>
+            </div>
+
+            <div id="history" class="tab-content active">
+                <h2><i class="fas fa-fingerprint"></i> L'Énigme du Léopard</h2>
+                <p>
+                    En 1952, <span class="highlight">Alan Turing</span> (célèbre pour avoir décrypté Enigma) s'intéresse à la biologie. Il publie : <i>"Les bases chimiques de la morphogenèse"</i>.
+                </p>
+                <p>
+                    Son génie a été de prouver que des règles mathématiques simples pouvaient créer des motifs biologiques complexes (rayures, taches, spirales) sans aucun "plan" préétabli.
+                </p>
+                <p>
+                    Il imagine deux substances virtuelles, les <b>Morphogènes</b>, qui se battent sur la peau de l'animal :
+                </p>
+                <ul style="color: #cbd5e1; list-style: none; padding-left: 0;">
+                    <li>🧪 <b>L'Activateur (A) :</b> Il veut se répandre partout.</li>
+                    <li>☠️ <b>L'Inhibiteur (B) :</b> Il essaie de tuer l'Activateur.</li>
+                </ul>
+                <p>C'est l'équilibre instable entre ces deux forces qui crée le dessin final.</p>
+            </div>
+
+            <div id="params" class="tab-content">
+                <h2><i class="fas fa-flask"></i> La Recette Chimique</h2>
+                <p>
+                    Dans cette simulation, tout dépend de deux variables que vous contrôlez. C'est comme régler le thermostat de l'univers.
+                </p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                    <div style="background: rgba(6, 182, 212, 0.1); padding: 15px; border-radius: 10px;">
+                        <h4 style="color:var(--accent); margin:0;">FEED (Nourriture)</h4>
+                        <p style="font-size:0.85rem; margin-top:5px;">Vitesse à laquelle on injecte le produit A. <br>Trop bas = Le monde meurt.</p>
+                    </div>
+                    <div style="background: rgba(239, 68, 68, 0.1); padding: 15px; border-radius: 10px;">
+                        <h4 style="color:#f87171; margin:0;">KILL (Mort)</h4>
+                        <p style="font-size:0.85rem; margin-top:5px;">Vitesse à laquelle on retire le produit B. <br>Trop haut = Pas de réaction.</p>
+                    </div>
+                </div>
+
+                <div class="phase-map">
+                    <span class="axis-label axis-y">TAUX DE MORT (KILL)</span>
+                    <span class="axis-label axis-x">TAUX DE NOURRITURE (FEED)</span>
+                    
+                    <div class="zone-marker" style="left: 20%; top: 70%; background: var(--accent);"></div>
+                    <span class="zone-label" style="left: 20%; top: 70%;">Mitose (Division)</span>
+
+                    <div class="zone-marker" style="left: 50%; top: 60%; background: #facc15;"></div>
+                    <span class="zone-label" style="left: 50%; top: 60%;">Corail (Labyrinthe)</span>
+
+                    <div class="zone-marker" style="left: 40%; top: 65%; background: #a855f7;"></div>
+                    <span class="zone-label" style="left: 40%; top: 65%;">Empreintes</span>
+
+                    <div class="zone-marker" style="left: 80%; top: 30%; background: #ef4444;"></div>
+                    <span class="zone-label" style="left: 80%; top: 30%;">Chaos / Mort</span>
+                </div>
+            </div>
+
+            <div id="maths" class="tab-content">
+                <h2><i class="fas fa-square-root-alt"></i> Sous le Capot</h2>
+                <p>
+                    Voici les <b>Équations de Gray-Scott</b> qui tournent 60 fois par seconde pour chaque pixel de votre écran. C'est un système d'équations différentielles partielles (EDP).
+                </p>
+
+                <div class="formula-box">
+                    ∂A/∂t = D<sub>A</sub>∇²A - AB² + f(1-A)<br><br>
+                    ∂B/∂t = D<sub>B</sub>∇²B + AB² - (k+f)B
+                </div>
+
+                <div class="variable-list">
+                    <div class="var-name">∂A/∂t</div>
+                    <div>Le changement de concentration au cours du temps (ce qu'on calcule).</div>
+
+                    <div class="var-name">∇²A</div>
+                    <div><b>Le Laplacien (Diffusion) :</b> Comment le produit s'étale vers ses voisins (comme une goutte d'encre dans l'eau).</div>
+
+                    <div class="var-name">AB²</div>
+                    <div><b>La Réaction :</b> Il faut 1 molécule de A et 2 de B pour transformer A en B. C'est une réaction autocatalytique.</div>
+
+                    <div class="var-name">f(1-A)</div>
+                    <div><b>Feed (Nourriture) :</b> On rajoute du A constamment pour alimenter la réaction.</div>
+
+                    <div class="var-name">-(k+f)B</div>
+                    <div><b>Kill (Mort) :</b> On retire du B pour éviter que tout l'écran ne devienne bleu.</div>
+                </div>
+
+                <p style="margin-top: 20px; font-size: 0.9rem; text-align: center;">
+                    <i>En résumé : Diffusion + Réaction explosive - Nettoyage = Motifs vivants.</i>
+                </p>
+            </div>
+
+            <div class="separator" style="margin: 30px 0;"></div>
+            
+            <div style="text-align: center;">
+                <a href="reaction.html" class="btn-group" style="display: inline-block; text-decoration: none; border: 1px solid var(--accent); padding: 12px 40px; border-radius: 30px; color: var(--accent); font-weight: bold; transition: 0.3s;">
+                    <i class="fas fa-play"></i> Retourner à l'Expérience
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            // Cacher tous les contenus
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            // Désactiver tous les boutons
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            
+            // Activer la cible
+            document.getElementById(tabName).classList.add('active');
+            
+            // Trouver quel bouton correspond (Astuce simple basée sur l'ordre)
+            const index = ['history', 'params', 'maths'].indexOf(tabName);
+            if(index >= 0) {
+                document.querySelectorAll('.tab-btn')[index].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

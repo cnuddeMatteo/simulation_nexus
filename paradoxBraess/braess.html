@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Paradoxe de Braess</title>
+    <link rel="stylesheet" href="style_braess.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="overlay-ui">
+        <div class="header">
+            <h1 class="neon-title">BRAESS <span class="pulse">PARADOX</span></h1>
+            <div class="subtitle">Théorie des Jeux & Trafic</div>
+        </div>
+
+        <div class="controls-panel">
+            <div class="status-box">
+                <div class="metric">
+                    <span class="label">Temps Moyen</span>
+                    <span class="value" id="avg-time">0.0s</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Voitures/min</span>
+                    <span class="value" id="car-count">0</span>
+                </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <button id="toggle-road-btn" onclick="toggleShortcut()">
+                <i class="fas fa-road"></i> <span id="btn-text">OUVRIR LE RACCOURCI</span>
+            </button>
+            <div class="separator"></div>
+
+<div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+    <a href="braess_info.html" style="color: #9ca3af; text-decoration: none; font-size: 0.8rem; border-bottom: 1px dashed #9ca3af;">
+        <i class="fas fa-book"></i> Comprendre
+    </a>
+    <a href="braess_creator.html" style="color: #9ca3af; text-decoration: none; font-size: 0.8rem; border-bottom: 1px dashed #9ca3af;">
+        <i class="fas fa-user"></i> Créateur
+    </a>
+    
+    <a href="../index.html" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px; margin-top: 5px;">
+        <i class="fas fa-th-large"></i> Mes autres projets
+    </a>
+</div>
+
+
+            <div class="explanation">
+                <p id="paradox-status">État : <b>Optimal</b></p>
+                <small>Observez le temps moyen augmenter quand vous ajoutez la route !</small>
+            </div>
+
+            <div class="separator"></div>
+            
+            <div style="text-align: center;">
+                <a href="index.html" class="back-link">Retour au Menu</a>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="braess-canvas"></canvas>
+
+    <script src="script_braess.js"></script>
+</body>
+</html>

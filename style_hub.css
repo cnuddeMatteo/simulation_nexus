@@ -1,0 +1,219 @@
+:root {
+    --bg-color: #050505;
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+    
+    /* Couleurs des projets */
+    --col-life: #00ff9d;   /* Vert */
+    --col-braess: #f59e0b; /* Orange */
+    --col-turing: #06b6d4; /* Cyan */
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Fond animé subtil */
+.bg-animation {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: 
+        radial-gradient(circle at 15% 50%, rgba(0, 255, 157, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.05), transparent 25%);
+    z-index: -1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 40px 0;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.profile-mini {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--text-dim);
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 5px;
+    font-weight: 800;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+.line {
+    width: 100px;
+    height: 2px;
+    background: #334155;
+    margin: 30px auto;
+}
+
+/* Grille des Projets */
+.grid-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Cartes */
+.card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid #334155;
+    border-radius: 20px;
+    padding: 30px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 280px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* Couleurs Spécifiques au survol */
+.card-life:hover { box-shadow: 0 10px 40px rgba(0, 255, 157, 0.15); border-color: var(--col-life); }
+.card-braess:hover { box-shadow: 0 10px 40px rgba(245, 158, 11, 0.15); border-color: var(--col-braess); }
+.card-turing:hover { box-shadow: 0 10px 40px rgba(6, 182, 212, 0.15); border-color: var(--col-turing); }
+
+.card-life:hover .icon-box { color: var(--col-life); transform: scale(1.1) rotate(-10deg); }
+.card-braess:hover .icon-box { color: var(--col-braess); transform: scale(1.1) rotate(-10deg); }
+.card-turing:hover .icon-box { color: var(--col-turing); transform: scale(1.1) rotate(-10deg); }
+
+/* Contenu Carte */
+.icon-box {
+    font-size: 3rem;
+    color: #475569;
+    margin-bottom: 20px;
+    transition: all 0.4s;
+}
+
+h2 { margin: 0; font-size: 1.5rem; }
+
+.desc { color: var(--text-dim); margin-top: 10px; font-size: 0.95rem; }
+
+.tags {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.tags span {
+    background: rgba(255,255,255,0.05);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card-arrow {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s;
+}
+
+.card:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card-life .card-arrow { color: var(--col-life); }
+.card-braess .card-arrow { color: var(--col-braess); }
+.card-turing .card-arrow { color: var(--col-turing); }
+
+/* Footer */
+/* --- FOOTER & SOCIALS --- */
+footer {
+    text-align: center;
+    margin-top: 80px;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+.socials {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.socials a {
+    color: #475569;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+}
+
+/* Animation générale : Grossissement */
+.socials a:hover {
+    transform: scale(1.2) translateY(-3px);
+}
+
+/* Couleurs spécifiques au survol */
+.socials a:hover { color: #f8fafc; text-shadow: 0 0 15px rgba(255,255,255,0.5); } /* Par défaut (Github/Mail) en blanc */
+
+/* Le cœur en Rouge Néon */
+.socials a.bmc-icon:hover {
+    color: #ef4444; 
+    text-shadow: 0 0 20px rgba(239, 68, 68, 0.8);
+}
+
+/* Bouton Qui suis-je */
+.btn-whoami {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    background: transparent;
+    border: 1px solid var(--text-dim);
+    color: var(--text-dim);
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-whoami:hover {
+    border-color: #fff;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}

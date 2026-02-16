@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Comprendre le Paradoxe</title>
+    <link rel="stylesheet" href="style_braess.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Override pour le scroll */
+        body { overflow-y: auto !important; height: auto !important; padding-bottom: 50px; }
+        .overlay-page-static { position: relative; height: auto; overflow: visible; padding: 40px 0; }
+
+        /* Carte Info */
+        .info-card {
+            background: var(--ui-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            box-shadow: 0 0 50px rgba(245, 158, 11, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Onglets */
+        .tab-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
+        .tab-btn { background: transparent; border: 1px solid #444; color: #9ca3af; padding: 10px 20px; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .tab-btn.active { background: var(--accent); color: #000; border-color: var(--accent); font-weight: bold; }
+        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+
+        /* Contenu */
+        h2 { color: var(--accent); border-bottom: 1px solid var(--accent-dim); padding-bottom: 10px; margin-top: 0; }
+        p { line-height: 1.7; color: #d1d5db; }
+        .highlight { color: #fff; font-weight: bold; }
+
+        /* Boites Explicatives */
+        .concept-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-left: 4px solid var(--accent);
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Exemple Mathématique */
+        .math-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .path-option {
+            background: #111;
+            padding: 15px;
+            border: 1px dashed #555;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .path-title { color: #3b82f6; font-weight: bold; display: block; margin-bottom: 5px; }
+        .path-cost { font-size: 1.5rem; font-weight: bold; color: #fff; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <div class="overlay-page-static">
+        <div class="info-card">
+            
+            <div class="header">
+                <h1 class="neon-title">THÉORIE DES JEUX</h1>
+                <div class="subtitle">Pourquoi plus de choix = Moins d'efficacité ?</div>
+            </div>
+
+            <div class="tab-container">
+                <button class="tab-btn active" onclick="openTab('concept')"><i class="fas fa-lightbulb"></i> Le Paradoxe</button>
+                <button class="tab-btn" onclick="openTab('math')"><i class="fas fa-calculator"></i> L'Équilibre de Nash</button>
+                <button class="tab-btn" onclick="openTab('real')"><i class="fas fa-city"></i> Dans la Vraie Vie</button>
+            </div>
+
+            <div id="concept" class="tab-content active">
+                <h2><i class="fas fa-traffic-light"></i> L'Intuition Piégée</h2>
+                <p>
+                    En 1968, le mathématicien allemand <b>Dietrich Braess</b> a découvert quelque chose d'incroyable :
+                    <span class="highlight">Ajouter une route à un réseau routier encombré peut augmenter le temps de trajet global.</span>
+                </p>
+                <div class="concept-box">
+                    <h4>🚗 L'Égoïsme du Conducteur</h4>
+                    <p>Chaque conducteur choisit le chemin qui semble le plus rapide <b>pour lui</b>, sans se soucier des autres. C'est ce comportement individuel "glouton" qui mène à une catastrophe collective.</p>
+                </div>
+                <p>
+                    Quand un raccourci ultra-rapide est ouvert, tout le monde s'y précipite. Ce raccourci devient un goulot d'étranglement, bloquant l'accès aux autres routes qui étaient pourtant fluides avant.
+                </p>
+            </div>
+
+            <div id="math" class="tab-content">
+                <h2><i class="fas fa-balance-scale"></i> L'Équilibre de Nash</h2>
+                <p>
+                    C'est un concept clé en Théorie des Jeux. Un système est à l'équilibre quand <b>personne n'a intérêt à changer sa stratégie seul</b>.
+                </p>
+                
+                <div class="math-grid">
+                    <div class="path-option">
+                        <span class="path-title">SANS RACCOURCI</span>
+                        <p style="font-size:0.9rem;">Le trafic se divise en deux (50/50).</p>
+                        <div class="path-cost">65 min</div>
+                        <small style="color:#10b981">Fluide & Équilibré</small>
+                    </div>
+                    <div class="path-option">
+                        <span class="path-title">AVEC RACCOURCI</span>
+                        <p style="font-size:0.9rem;">Tout le monde veut le raccourci.</p>
+                        <div class="path-cost">80 min</div>
+                        <small style="color:#ef4444">Saturé & Bloqué</small>
+                    </div>
+                </div>
+
+                <p style="margin-top: 20px;">
+                    Le paradoxe survient parce que l'<b>Optimum Individuel</b> (ce que je veux faire) est différent de l'<b>Optimum Social</b> (ce qui est bon pour le groupe).
+                </p>
+            </div>
+
+            <div id="real" class="tab-content">
+                <h2><i class="fas fa-globe-americas"></i> Exemples Réels</h2>
+                <p>Ce n'est pas que de la théorie ! Plusieurs villes ont expérimenté ce phénomène :</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px;">
+                        🇺🇸 <b>New York (1990) :</b> La fermeture de la 42ème rue pour le Jour de la Terre a en réalité <i>réduit</i> les embouteillages dans la zone.
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        🇰🇷 <b>Séoul :</b> La destruction d'une autoroute urbaine géante pour restaurer une rivière a fluidifié le trafic dans tout le centre-ville.
+                    </li>
+                    <li>
+                        🇩🇪 <b>Stuttgart :</b> Après avoir investi massivement dans une nouvelle route, le trafic a tellement ralenti que la ville a fini par... la fermer !
+                    </li>
+                </ul>
+            </div>
+
+            <div class="separator" style="margin: 30px 0;"></div>
+            
+            <div style="text-align: center;">
+                <a href="braess.html" style="display: inline-block; text-decoration: none; border: 2px solid var(--accent); padding: 12px 40px; border-radius: 8px; color: var(--accent); font-weight: bold; transition: 0.3s;">
+                    RETOUR À LA SIMULATION
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function openTab(id) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
