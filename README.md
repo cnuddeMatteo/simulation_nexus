@@ -1,6 +1,3 @@
-Voici une version mise à jour et enrichie de ton **README.md**. J'ai ajouté les trois nouveaux projets (**Fermi, Maxwell, Hilbert**), mentionné les nouvelles fonctionnalités (Audio procédural, Menus immersifs) et mis à jour l'arborescence des fichiers.
-
-Tu peux copier-coller ce bloc directement dans ton fichier `README.md`.
 
 ---
 
