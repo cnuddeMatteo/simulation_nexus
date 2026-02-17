@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Paradoxe - Documentation</title>
+    <link rel="stylesheet" href="style_hotel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { overflow-y: auto; background: #111; padding-bottom: 50px; }
+        .doc-container {
+            max-width: 800px; margin: 50px auto;
+            border-left: 2px solid var(--cyber-yellow);
+            padding-left: 40px;
+        }
+        h1 { font-size: 2.5rem; color: #fff; text-transform: uppercase; }
+        h2 { color: var(--cyber-yellow); margin-top: 40px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        p { color: #ccc; line-height: 1.8; text-align: justify; }
+        
+        .code-block {
+            background: #000; border: 1px solid #333;
+            padding: 20px; margin: 20px 0;
+            font-family: 'Courier New', monospace; color: var(--cyber-yellow);
+        }
+        
+        .visual-demo {
+            display: flex; gap: 10px; justify-content: center; margin: 30px 0;
+        }
+        .room-box {
+            border: 1px solid #555; width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 0.8rem;
+        }
+        .arrow { color: var(--cyber-yellow); font-size: 1.5rem; align-self: center; }
+
+        .back-btn {
+            display: inline-block; margin-top: 40px;
+            padding: 15px 30px; background: var(--cyber-yellow); color: #000;
+            text-decoration: none; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="doc-container">
+        <h1>L'Infini + 1 = L'Infini</h1>
+        <p>Le paradoxe de l'Hôtel de Hilbert, imaginé par David Hilbert en 1924, illustre la nature contre-intuitive des ensembles infinis.</p>
+
+        
+
+        <h2>1. Le Problème</h2>
+        <p>
+            Imaginez un hôtel avec une infinité de chambres (1, 2, 3...).<br>
+            L'hôtel est <strong>complet</strong>. Chaque chambre est occupée.
+            Un nouveau client arrive à la réception. Le gérant peut-il lui trouver une chambre sans mettre personne dehors ?
+        </p>
+
+        <h2>2. La Solution Simple (n &rarr; n+1)</h2>
+        <p>
+            Oui. Puisque l'infini n'est pas un nombre fini, on peut "pousser" tout le monde.
+            Le gérant demande à chaque client de se déplacer de sa chambre <em>n</em> vers la chambre <em>n + 1</em>.
+        </p>
+        
+        <div class="code-block">
+            Chambre 1 &rarr; Chambre 2<br>
+            Chambre 2 &rarr; Chambre 3<br>
+            Chambre 3 &rarr; Chambre 4<br>
+            ...<br>
+            Chambre n &rarr; Chambre n + 1
+        </div>
+
+        <p>Résultat : La chambre 1 devient vide pour le nouvel arrivant. Personne n'a été expulsé, pourtant nous avons logé une personne de plus.</p>
+
+        <h2>3. Le Bus Infini (n &rarr; 2n)</h2>
+        <p>
+            Maintenant, imaginez qu'un bus contenant une <strong>infinité</strong> de passagers arrive. Comment loger une infinité de personnes dans un hôtel déjà complet ?
+        </p>
+        <p>
+            Le gérant demande aux clients actuels de se déplacer dans la chambre correspondant au <strong>double</strong> de leur numéro actuel.
+        </p>
+
+        <div class="code-block">
+            Chambre 1 &rarr; Chambre 2<br>
+            Chambre 2 &rarr; Chambre 4<br>
+            Chambre 3 &rarr; Chambre 6<br>
+            ...<br>
+            Chambre n &rarr; Chambre 2n
+        </div>
+
+        <p>
+            Résultat : Toutes les chambres paires (2, 4, 6...) sont occupées par les anciens clients.
+            Toutes les chambres impaires (1, 3, 5...) deviennent libres. Comme il y a une infinité de nombres impairs, tous les passagers du bus peuvent s'y installer !
+        </p>
+
+        <a href="hotel.html" class="back-btn"><i class="fas fa-arrow-left"></i> RETOUR À L'EXPÉRIENCE</a>
+    </div>
+
+</body>
+</html>

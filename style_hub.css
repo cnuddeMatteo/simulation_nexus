@@ -7,6 +7,9 @@
     --col-life: #00ff9d;   /* Vert */
     --col-braess: #f59e0b; /* Orange */
     --col-turing: #06b6d4; /* Cyan */
+    --col-maxwell: #d946ef; /* Rose Néon */
+    --col-fermi: #00ffff; /* Cyan Espace */
+    --col-hotel: #facc15; /* Jaune Cyberpunk */
 }
 
 body {
@@ -217,3 +220,15 @@ footer {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
+
+.card-maxwell:hover { box-shadow: 0 10px 40px rgba(217, 70, 239, 0.15); border-color: var(--col-maxwell); }
+.card-maxwell:hover .icon-box { color: var(--col-maxwell); transform: scale(1.1) rotate(-10deg); }
+.card-maxwell .card-arrow { color: var(--col-maxwell); }
+
+.card-fermi:hover { box-shadow: 0 10px 40px rgba(0, 255, 255, 0.15); border-color: var(--col-fermi); }
+.card-fermi:hover .icon-box { color: var(--col-fermi); transform: scale(1.1) rotate(-10deg); }
+.card-fermi .card-arrow { color: var(--col-fermi); }
+
+.card-hotel:hover { box-shadow: 0 10px 40px rgba(250, 204, 21, 0.15); border-color: var(--col-hotel); }
+.card-hotel:hover .icon-box { color: var(--col-hotel); transform: scale(1.1); }
+.card-hotel .card-arrow { color: var(--col-hotel); }

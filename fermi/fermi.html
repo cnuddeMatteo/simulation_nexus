@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Fermi Paradox - The Great Filter</title>
+    <link rel="stylesheet" href="style_fermi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="start-screen">
+    <div class="mission-card">
+        <h1 class="neon-title">PROJET <span class="pulse">FERMI</span></h1>
+        
+        <p class="mission-brief">
+            La galaxie est vieille de 13 milliards d'années.<br>
+            Elle contient 200 milliards d'étoiles.<br>
+            Pourtant, <b>le silence est total.</b>
+        </p>
+
+        <div class="rules-grid">
+            <div class="rule-box life">
+                <i class="fas fa-dna"></i>
+                <h3>VIE</h3>
+                <p>Cliquez sur une étoile pour<br>démarrer la <b>Colonisation</b>.</p>
+            </div>
+            
+            <div class="vs-divider"><i class="fas fa-arrow-right"></i></div>
+
+            <div class="rule-box filter">
+                <i class="fas fa-skull"></i>
+                <h3>FILTRE</h3>
+                <p>Ajustez les paramètres pour voir<br>si la vie <b>survit</b> ou s'éteint.</p>
+            </div>
+        </div>
+
+        <div class="controls-hint">
+            <i class="fas fa-mouse"></i> Glisser pour bouger &bull; Molette pour Zoomer
+        </div>
+
+        <button class="btn-start" onclick="closeStartMenu()">
+            <i class="fas fa-power-off"></i> INITIALISER LE SYSTÈME
+        </button>
+    </div>
+</div>
+    <div class="overlay-ui">
+        <div class="header">
+            <h1 class="neon-title">FERMI <span class="pulse">FILTER</span></h1>
+            <div class="subtitle">Le Silence Éternel</div>
+        </div>
+
+        <div class="controls-panel">
+            
+            <div class="stats-grid">
+                <div class="metric">
+                    <span class="label" style="color: #fbbf24;">Année (M)</span>
+                    <span class="value" id="year-count" style="color: #fbbf24;">0</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Étoiles</span>
+                    <span class="value" id="star-count">0</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Civilisations</span>
+                    <span class="value c-active" id="civ-active">0</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Éteintes</span>
+                    <span class="value c-dead" id="civ-dead">0</span>
+                </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="sliders-container">
+                <div class="slider-group">
+                    <label><i class="fas fa-dna"></i> Apparition Vie</label>
+                    <input type="range" id="spawn-slider" min="0" max="100" value="0">
+                </div>
+                
+                <div class="slider-group">
+                    <label><i class="fas fa-rocket"></i> Expansion</label>
+                    <input type="range" id="expansion-slider" min="0" max="100" value="50">
+                </div>
+
+                <div class="slider-group">
+                    <label><i class="fas fa-skull"></i> Le Grand Filtre</label>
+                    <input type="range" id="filter-slider" min="0" max="100" value="0">
+                    <small style="color: #ef4444; font-size: 0.7rem;">Probabilité d'extinction</small>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="slider-group">
+                    <label><i class="fas fa-tachometer-alt"></i> Vitesse du Temps</label>
+                    <input type="range" id="speed-slider" min="0" max="300" value="20">
+                    <small style="color: #fbbf24; font-size: 0.7rem;">0 = Pause, 100 = Normal</small>
+                </div>
+                <div id="game-instruction" class="pulse" style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #00ffff; font-weight: bold; letter-spacing: 1px;">
+    <i class="fas fa-mouse-pointer"></i> INITIALISATION REQUISE : CLIQUEZ SUR UNE ÉTOILE
+</div>
+            </div>
+
+            <div style="text-align: center; margin-top: 10px; font-size: 0.7rem; color: #aaa;">
+                <i class="fas fa-mouse-pointer"></i> Clic : Créer Vie | Molette : Zoomer
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="btn-group">
+                <button onclick="resetGalaxy()"><i class="fas fa-globe"></i> Nouvelle Galaxie</button>
+                <button onclick="clearCivs()"><i class="fas fa-eraser"></i> Reset Vie</button>
+                <button onclick="toggleAudio()" id="btn-audio"><i class="fas fa-volume-mute"></i> Audio Off</button>
+            </div>
+
+            <div class="nav-links">
+                <a href="fermi_info.html"><i class="fas fa-book"></i> Théorie</a>
+                <a href="fermi_creator.html"><i class="fas fa-user-astronaut"></i> Créateur</a>
+                <a href="../index.html" class="back-home"><i class="fas fa-th-large"></i> Autres projets</a>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="fermi-canvas"></canvas>
+
+    <script src="script_fermi.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Maxwell's Demon - Entropy Game</title>
+    <link rel="stylesheet" href="style_maxwell.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="start-screen">
+    <div class="mission-card">
+        <h1 class="neon-title">MISSION : <span class="pulse">ENTROPY</span></h1>
+        
+        <p class="mission-brief">
+            Bienvenue, Démon. Votre tâche est de violer les lois de la physique.
+            Vous devez trier les atomes pour créer une différence de température.
+        </p>
+
+        <div class="rules-grid">
+            <div class="rule-box cold">
+                <i class="fas fa-snowflake"></i>
+                <h3>FROID</h3>
+                <p>Les particules <b>BLEUES</b> (Lentes)<br>doivent aller à <b>GAUCHE</b>.</p>
+            </div>
+            
+            <div class="vs-divider">VS</div>
+
+            <div class="rule-box hot">
+                <i class="fas fa-fire"></i>
+                <h3>CHAUD</h3>
+                <p>Les particules <b>ROSES</b> (Rapides)<br>doivent aller à <b>DROITE</b>.</p>
+            </div>
+        </div>
+
+        <div class="controls-hint">
+            <i class="far fa-keyboard"></i> Appuyez sur <b>ESPACE</b> pour ouvrir la porte
+        </div>
+
+        <button class="btn-start" onclick="startGame()">
+            <i class="fas fa-power-off"></i> INITIALISER LA SÉQUENCE
+        </button>
+    </div>
+</div>
+    <div class="overlay-ui">
+        <div class="header">
+            <h1 class="neon-title">ENTROPY <span class="pulse">DEMON</span></h1>
+            <div class="subtitle">Défiez la Thermodynamique</div>
+        </div>
+
+        <div class="game-container">
+    <div class="stats-box left-side">
+        <h3>FROID (Gauche)</h3>
+        <div class="metric" title="Température en Celcius">
+            <i class="fas fa-thermometer-empty"></i> <span id="temp-left">0</span> °C
+        </div>
+        <small class="unit-desc">(Température)</small> <div class="metric" style="margin-top: 10px;">
+            <i class="fas fa-atom"></i> <span id="count-left">0</span> part.
+        </div>
+    </div>
+
+    <div class="middle-control">
+        <button id="btn-door" onmousedown="openDoor()" onmouseup="closeDoor()" ontouchstart="openDoor()" ontouchend="closeDoor()">
+            OUVRIR
+        </button>
+        
+        <div class="key-hint">
+            <i class="far fa-keyboard"></i> Maintenir <b>ESPACE</b>
+        </div>
+
+        <div class="score-display">DÉMON SCORE: <span id="demon-score">0</span>%</div>
+    </div>
+
+    <div class="stats-box right-side">
+        <h3>CHAUD (Droite)</h3>
+        <div class="metric" title="Température en Celsius">
+            <i class="fas fa-thermometer-full"></i> <span id="temp-right">0</span> °C
+        </div>
+        <small class="unit-desc">(Température)</small> <div class="metric" style="margin-top: 10px;">
+            <i class="fas fa-atom"></i> <span id="count-right">0</span> part.
+        </div>
+    </div>
+</div>
+
+        <div class="controls-panel">
+            <div class="btn-group">
+                <button onclick="resetSim()"><i class="fas fa-undo"></i> Reset</button>
+                <button onclick="togglePause()" id="btn-pause"><i class="fas fa-pause"></i> Pause</button>
+            </div>
+
+            <div class="nav-links">
+                <a href="maxwell_info.html"><i class="fas fa-book"></i> Théorie</a>
+                <a href="maxwell_creator.html"><i class="fas fa-user-astronaut"></i> Créateur</a>
+                <a href="../index.html" class="back-home"><i class="fas fa-th-large"></i> Autres projets</a>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="maxwell-canvas"></canvas>
+
+    <script src="script_maxwell.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Comprendre Fermi - Théorie & Science</title>
+    <link rel="stylesheet" href="style_fermi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Styles spécifiques pour la lecture confortable */
+        body { 
+            overflow-y: auto !important; 
+            height: auto !important; 
+            padding-bottom: 50px;
+            background-color: #050505;
+        }
+        
+        .info-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .info-card {
+            background: rgba(10, 20, 30, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.1);
+            margin-bottom: 40px;
+        }
+
+        h1.main-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0 0 20px #00ffff;
+        }
+
+        h2 { 
+            color: #00ffff; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+            padding-bottom: 15px; 
+            margin-top: 40px;
+            font-size: 1.8rem;
+        }
+
+        h3 { color: #fff; margin-top: 25px; font-size: 1.3rem; }
+
+        p { 
+            line-height: 1.8; 
+            color: #cbd5e1; 
+            font-size: 1.05rem; 
+            margin-bottom: 20px; 
+            text-align: justify;
+        }
+
+        ul { margin-bottom: 20px; color: #cbd5e1; }
+        li { margin-bottom: 10px; line-height: 1.6; }
+        
+        strong { color: #fff; font-weight: bold; }
+        em { color: #fbbf24; font-style: normal; }
+
+        .highlight-box {
+            background: rgba(0, 255, 255, 0.05);
+            border-left: 4px solid #00ffff;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .equation {
+            font-family: 'Courier New', monospace;
+            background: rgba(0,0,0,0.5);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #fbbf24;
+            letter-spacing: 2px;
+            margin: 20px 0;
+            border: 1px dashed rgba(255,255,255,0.2);
+        }
+
+        .back-btn { 
+            display: inline-block; 
+            margin-top: 20px; 
+            padding: 15px 40px; 
+            border: 1px solid #00ffff; 
+            color: #00ffff; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            transition: 0.3s; 
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .back-btn:hover { background: #00ffff; color: #000; box-shadow: 0 0 30px #00ffff; }
+
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #0f172a, #1e293b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="info-container">
+        
+        <div class="info-card">
+            <h1 class="main-title">LE PARADOXE DE FERMI</h1>
+            <p style="text-align: center; color: #64748b;">"Où est tout le monde ?" — Enrico Fermi, 1950</p>
+
+            <div class="highlight-box">
+                <p style="margin: 0;">
+                    Il y a environ <strong>200 à 400 milliards d'étoiles</strong> dans notre galaxie. Il y a autant de galaxies dans l'univers observable. Même si la vie est rare, les chiffres sont si gigantesques que nous devrions être entourés de voisins. Pourtant, nous ne captons <strong>aucun signal</strong>. C'est le Grand Silence.
+                </p>
+            </div>
+
+            <h2>1. L'Équation de Drake</h2>
+            <p>
+                En 1961, l'astronome Frank Drake a proposé une formule pour estimer le nombre potentiel de civilisations intelligentes dans notre galaxie avec qui nous pourrions communiquer.
+            </p>
+            
+            <div class="equation">
+                N = R* × fp × ne × fl × fi × fc × L
+            </div>
+
+            <ul>
+                <li><strong>N :</strong> Le nombre de civilisations détectables.</li>
+                <li><strong>R* :</strong> Le taux de formation d'étoiles.</li>
+                <li><strong>fp :</strong> La fraction d'étoiles avec des planètes.</li>
+                <li><strong>ne :</strong> Le nombre de planètes habitables par système.</li>
+                <li><strong>fl :</strong> La fraction où la vie apparaît réellement.</li>
+                <li><strong>fi :</strong> La fraction où l'intelligence émerge.</li>
+                <li><strong>fc :</strong> La fraction capable de communiquer (radio, ondes).</li>
+                <li><strong>L :</strong> La durée de vie moyenne d'une telle civilisation.</li>
+            </ul>
+            <p>
+                Dans cette simulation, vous jouez avec ces variables (notamment <em>fl</em> et <em>L</em>) via les curseurs d'apparition et de filtre.
+            </p>
+
+            <h2>2. Le Grand Filtre</h2>
+            <p>
+                Pourquoi l'univers semble-t-il vide ? La théorie du <strong>Grand Filtre</strong> suggère qu'il existe un obstacle évolutif extrêmement difficile à franchir, qui élimine presque toutes les espèces.
+            </p>
+            
+            <h3>Option A : Le Filtre est derrière nous (Nous sommes rares)</h3>
+            <p>
+                L'étape difficile était peut-être l'apparition de la vie elle-même, ou le passage des cellules simples (procaryotes) aux cellules complexes (eucaryotes). Si c'est vrai, nous sommes peut-être la <strong>première</strong> civilisation intelligente de la galaxie. Nous sommes seuls, mais en sécurité.
+            </p>
+
+            <h3>Option B : Le Filtre est devant nous (Nous sommes condamnés)</h3>
+            <p>
+                Et si la vie apparaissait partout, mais que les civilisations s'autodétruisaient systématiquement dès qu'elles atteignent un certain niveau technologique ? Guerre nucléaire, IA incontrôlée, épuisement des ressources, changement climatique...
+                
+                Dans ce cas, le silence de l'univers signifie que personne ne survit assez longtemps pour voyager.
+            </p>
+
+            <h2>3. L'Échelle de Kardashev</h2>
+            <p>
+                Si une civilisation survit, elle devrait avoir besoin de plus en plus d'énergie. Nikolaï Kardashev a classé ces civilisations en trois types :
+            </p>
+            <ul>
+                <li><strong>Type I (Planétaire) :</strong> Maîtrise toute l'énergie de sa planète (Nous sommes à environ 0.73).</li>
+                <li><strong>Type II (Stellaire) :</strong> Maîtrise toute l'énergie de son étoile (ex: Sphère de Dyson). Visible à des années-lumière.</li>
+                <li><strong>Type III (Galactique) :</strong> Maîtrise l'énergie de sa galaxie entière. Ils seraient des dieux pour nous.</li>
+            </ul>
+            <p>
+                Une civilisation de Type III devrait être <strong>impossible à manquer</strong>. Le fait qu'on ne les voie pas suggère qu'elles n'existent pas... ou qu'elles se cachent.
+            </p>
+
+            <h2>4. Autres Hypothèses Fascinantes</h2>
+            <ul>
+                <li><strong>L'Hypothèse du Zoo :</strong> Les extraterrestres nous observent mais ont une règle de "non-interférence" (comme dans Star Trek) pour laisser notre évolution se faire naturellement.</li>
+                <li><strong>La Forêt Sombre :</strong> L'univers est une forêt nocturne pleine de prédateurs silencieux. Si vous émettez de la lumière (ondes radio), vous êtes repéré et éliminé. C'est pour cela que tout le monde se tait.</li>
+                <li><strong>La Transcendance :</strong> Les civilisations avancées ne s'intéressent plus à l'espace physique. Elles ont transféré leur conscience dans des simulations numériques parfaites (Métavers ultimes) et vivent dans des trous noirs pour l'efficacité énergétique.</li>
+            </ul>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="fermi.html" class="back-btn">
+                    <i class="fas fa-rocket"></i> Retour à la Simulation
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

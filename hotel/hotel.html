@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Infinite Hotel - Hilbert's Paradox</title>
+    <link rel="stylesheet" href="style_hotel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="start-screen">
+    <div class="terminal-card">
+        <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="term-title">SYS.ADMIN.INFINITY_V1.exe</span>
+        </div>
+        
+        <h1 class="cyber-glitch" data-text="HILBERT HOTEL">HILBERT HOTEL</h1>
+        
+        <div class="status-report">
+            <p>> VÉRIFICATION CAPACITÉ... <span class="blink">COMPLET</span></p>
+            <p>> NOMBRE DE CHAMBRES... <strong>∞ (INFINI)</strong></p>
+            <p>> LISTE D'ATTENTE... <strong>1 BUS INFINI</strong></p>
+        </div>
+
+        <div class="instruction-box">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p>
+                ATTENTION : L'hôtel est mathématiquement complet.<br>
+                Cependant, nous pouvons toujours faire de la place.
+            </p>
+        </div>
+
+        <button class="btn-start" onclick="startSystem()">
+            <i class="fas fa-key"></i> ACCÉDER AU SYSTÈME
+        </button>
+    </div>
+</div>
+    <div class="overlay-ui">
+        <div class="header">
+            <h1 class="cyber-title">INFINITE <span class="highlight">HOTEL</span></h1>
+            <div class="subtitle">Gestionnaire d'Infinité v1.0</div>
+        </div>
+
+        <div class="status-bar">
+            <div class="stat">
+                <span class="label">Statut</span>
+                <span class="value blink">COMPLET</span>
+            </div>
+            <div class="stat">
+                <span class="label">Chambres</span>
+                <span class="value">∞</span>
+            </div>
+            <div class="stat">
+                <span class="label">Invités</span>
+                <span class="value">∞</span>
+            </div>
+        </div>
+
+        <div class="controls-panel">
+            <h3><i class="fas fa-exclamation-triangle"></i> NOUVEAUX ARRIVANTS</h3>
+            
+            <button class="btn-cyber" onclick="paradoxOne()">
+                <div class="btn-content">
+                    <span class="btn-title">1 INVITÉ</span>
+                    <span class="btn-desc">Décaler n &rarr; n+1</span>
+                </div>
+                <i class="fas fa-user"></i>
+            </button>
+
+            <button class="btn-cyber" onclick="paradoxBus()">
+                <div class="btn-content">
+                    <span class="btn-title">BUS INFINI</span>
+                    <span class="btn-desc">Décaler n &rarr; 2n</span>
+                </div>
+                <i class="fas fa-bus"></i>
+            </button>
+
+            <div class="scroll-hint">
+                <i class="fas fa-arrows-alt-h"></i> SCROLL / DRAG POUR EXPLORER
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="hotel_info.html">Paradoxe</a>
+            <a href="hotel_creator.html">Créateur</a>
+            <a href="../index.html" class="back-home">HUB</a>
+        </div>
+    </div>
+
+    <canvas id="hotel-canvas"></canvas>
+
+    <script src="script_hotel.js"></script>
+</body>
+</html>

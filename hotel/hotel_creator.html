@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Architecte - Mattéo Cnudde</title>
+    <link rel="stylesheet" href="style_hotel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { overflow-y: auto !important; height: auto !important; padding-bottom: 50px; }
+        
+        .creator-card {
+            background: #0a0a0a;
+            padding: 50px;
+            border: 1px solid #333;
+            border-top: 5px solid var(--cyber-yellow);
+            max-width: 600px; 
+            margin: 50px auto; 
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            position: relative;
+        }
+
+        /* Effet vis de chantier aux coins */
+        .screw {
+            position: absolute; width: 10px; height: 10px; 
+            background: #333; border-radius: 50%;
+        }
+        .tl { top: 10px; left: 10px; } .tr { top: 10px; right: 10px; }
+        .bl { bottom: 10px; left: 10px; } .br { bottom: 10px; right: 10px; }
+
+        .profile-pic { 
+            font-size: 4rem; 
+            color: var(--cyber-yellow); 
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+        }
+        
+        h1 { margin: 0; color: #fff; font-size: 2rem; letter-spacing: -1px; }
+        .role { color: #666; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 30px; letter-spacing: 2px; }
+
+        .bio {
+            text-align: left;
+            border-left: 2px solid var(--cyber-yellow);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .socials a { 
+            color: #444; font-size: 1.5rem; margin: 0 15px; transition: 0.3s; 
+        }
+        .socials a:hover { color: var(--cyber-yellow); transform: scale(1.2); }
+
+        .back-link {
+            display: inline-block; margin-top: 30px;
+            color: var(--cyber-yellow); text-decoration: none;
+            border-bottom: 1px dashed var(--cyber-yellow);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="creator-card">
+        <div class="screw tl"></div><div class="screw tr"></div>
+        <div class="screw bl"></div><div class="screw br"></div>
+
+        <div class="profile-pic"><i class="fas fa-hard-hat"></i></div>
+        <h1>Mattéo Cnudde</h1>
+        <div class="role">Architecte de l'Infini</div>
+        
+        <div class="bio">
+            <p>
+                "L'infini n'est pas une taille, c'est un concept. En informatique, gérer l'infini demande de tricher : on ne calcule que ce que l'utilisateur voit."
+            </p>
+            <p>
+                J'ai créé ce projet pour visualiser le vertige mathématique de Hilbert à travers une interface brute et industrielle.
+            </p>
+        </div>
+
+        <div class="socials">
+            <a href="https://github.com/cnuddeMatteo" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://buymeacoffee.com/spunnn" target="_blank"><i class="fas fa-heart"></i></a>
+            <a href="mailto:cnudde.matteo.59@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <br>
+        <a href="hotel.html" class="back-link">RETOUR AU CHANTIER</a>
+    </div>
+
+</body>
+</html>

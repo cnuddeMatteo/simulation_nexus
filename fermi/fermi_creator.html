@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Créateur - Mattéo Cnudde</title>
+    <link rel="stylesheet" href="style_fermi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Styles spécifiques Créateur (Adaptés du modèle Braess) */
+        body { 
+            overflow-y: auto !important; 
+            height: auto !important; 
+            padding-bottom: 50px; 
+            background-color: #050505;
+        }
+        
+        .overlay-page-static { 
+            position: relative; 
+            height: auto; 
+            overflow: visible; 
+            padding: 40px 0; 
+        }
+
+        .creator-card {
+            background: rgba(10, 20, 30, 0.95); /* Fond sombre bleuté */
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid #00ffff; /* Bordure Cyan */
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.2); /* Ombre Cyan */
+        }
+
+        .profile-icon {
+            font-size: 4rem; 
+            color: #00ffff;
+            background: rgba(0, 255, 255, 0.1);
+            width: 120px; height: 120px; line-height: 120px;
+            border-radius: 50%; 
+            margin: 0 auto 20px;
+            border: 2px solid #00ffff;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .creator-name { 
+            font-size: 2.5rem; 
+            margin: 0; 
+            color: #fff; 
+            text-shadow: 0 0 10px #00ffff; 
+        }
+        
+        .roles-container { 
+            display: flex; justify-content: center; gap: 15px; margin: 20px 0; flex-wrap: wrap; 
+        }
+        
+        .role-badge {
+            background: #0f172a; 
+            border: 1px solid rgba(0, 255, 255, 0.3); 
+            padding: 8px 15px; 
+            border-radius: 5px; 
+            color: #cbd5e1; 
+            font-size: 0.9rem;
+        }
+
+        /* Réseaux */
+        .social-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; }
+        .social-icon { font-size: 2.2rem; color: #64748b; transition: 0.3s; text-decoration: none; }
+        .social-icon:hover { transform: scale(1.2); color: #00ffff; text-shadow: 0 0 15px #00ffff; }
+        .social-icon.support:hover { color: #ef4444; text-shadow: 0 0 15px #ef4444; } /* Cœur Rouge */
+
+        .vision-section {
+            text-align: left; 
+            background: rgba(0, 255, 255, 0.03); 
+            padding: 25px; 
+            border-left: 4px solid #00ffff; 
+            margin-bottom: 30px;
+        }
+        .vision-section h3 { margin-top: 0; color: #00ffff; }
+
+        .back-btn {
+            display: inline-block; 
+            text-decoration: none; 
+            border: 2px solid #00ffff; 
+            padding: 10px 30px; 
+            border-radius: 50px; 
+            color: #00ffff; 
+            font-weight: bold; 
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .back-btn:hover { background: #00ffff; color: #000; box-shadow: 0 0 20px #00ffff; }
+    </style>
+</head>
+<body>
+
+    <div class="overlay-page-static">
+        <div class="creator-card">
+            
+            <div class="profile-header">
+                <div class="profile-icon"><i class="fas fa-user-astronaut"></i></div>
+                <h1 class="creator-name">Mattéo Cnudde</h1>
+                
+                <div class="roles-container">
+                    <span class="role-badge"><i class="fas fa-code"></i> Creative Coding</span>
+                    <span class="role-badge"><i class="fas fa-globe"></i> Systèmes Complexes</span>
+                    <span class="role-badge"><i class="fas fa-atom"></i> Probabilités</span>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/cnuddeMatteo" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://buymeacoffee.com/spunnn" target="_blank" class="social-icon support"><i class="fas fa-heart"></i></a>
+                    <a href="mailto:cnudde.matteo.59@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="vision-section">
+                <h3><i class="fas fa-binoculars"></i> L'Infiniment Grand & L'Infiniment Vide</h3>
+                <p style="color: #cbd5e1; line-height: 1.6;">
+                    Le Paradoxe de Fermi est peut-être la question la plus vertigineuse de l'humanité.
+                    <br><br>
+                    J'ai conçu cette simulation pour visualiser la fragilité de la vie à l'échelle cosmique. 
+                    Mon but est de transformer des concepts abstraits (Équation de Drake, Grand Filtre) en une expérience visuelle tangible où vous contrôlez le destin de la galaxie.
+                </p>
+            </div>
+
+            <div style="font-style: italic; color: #64748b; margin-bottom: 30px;">
+                "Deux possibilités existent : soit nous sommes seuls dans l'Univers, soit nous ne le sommes pas. Les deux hypothèses sont tout aussi effrayantes."
+                <br><span style="color: #00ffff; font-weight: bold;">— Arthur C. Clarke</span>
+            </div>
+
+            <a href="fermi.html" class="back-btn">Retour à la Galaxie</a>
+        </div>
+    </div>
+
+</body>
+</html>
