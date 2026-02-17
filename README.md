@@ -1,35 +1,78 @@
+Voici une version mise à jour et enrichie de ton **README.md**. J'ai ajouté les trois nouveaux projets (**Fermi, Maxwell, Hilbert**), mentionné les nouvelles fonctionnalités (Audio procédural, Menus immersifs) et mis à jour l'arborescence des fichiers.
+
+Tu peux copier-coller ce bloc directement dans ton fichier `README.md`.
+
+---
+
 # 🌐 SIMULATION_NEXUS
 
-![Project Banner]()
 > **Exploration Algorithmique & Systèmes Complexes**
 
-**Simulation_Nexus** est un portfolio interactif regroupant trois expériences visuelles basées sur les mathématiques, la biologie et la théorie des jeux. Ce projet démontre comment des règles locales simples peuvent engendrer des comportements globaux complexes (émergence).
+**Simulation_Nexus** est un portfolio interactif regroupant **six expériences visuelles** basées sur les mathématiques, la physique, la biologie et la philosophie. Ce projet démontre comment des règles locales simples peuvent engendrer des comportements globaux complexes, le tout via une interface immersive style Sci-Fi / Cyberpunk.
 
-🔗 **[Mon profil](https://github.com/cnuddeMatteo)**
+🔗 **[Voir le projet en ligne](https://cnuddematteo.github.io/simulation_nexus/)** 
 
 ---
 
 ## 🧪 Les Modules
 
-Ce Nexus connecte trois simulations distinctes, entièrement codées en **Vanilla JS** et rendues via l'API **Canvas HTML5** pour une performance optimale (60 FPS).
+Ce Nexus connecte six simulations distinctes, entièrement codées en **Vanilla JS**, rendues via l'API **Canvas HTML5** et sonorisées via **Web Audio API**.
 
-### 1. 🧬 Bio-Digital Life (Jeu de la Vie de Conway)
-Une réinterprétation esthétique de l'automate cellulaire le plus célèbre.
+### 1. 🧬 Bio-Digital Life (Jeu de la Vie)
+
+*Une réinterprétation esthétique de l'automate cellulaire de Conway.*
+
 * **Concept :** Évolution de populations cellulaires selon des règles de survie/mort.
-* **Features :** Effet de rémanence (Ghost trails), couleurs dynamiques, dessin à la souris, et presets (Planeurs, Canons de Gosper).
-* **Style :** Vert Cyber / Matrix.
+* **Features :** Mode "Peinture" à la souris, Audio procédural (Bips organiques), Presets (Canons, Vaisseaux).
+* **Thème :** 🟢 **Vert Matrix**
 
-### 2. 🚗 Braess Paradox (Théorie des Jeux)
-Une démonstration contre-intuitive de l'optimisation des réseaux routiers.
+### 2. 🚗 Braess Paradox (Trafic & Théorie des Jeux)
+
+*Une démonstration contre-intuitive de l'optimisation des réseaux.*
+
 * **Concept :** *Pourquoi ajouter une route peut ralentir le trafic global ?* (Équilibre de Nash).
-* **Features :** Simulation d'agents (voitures) avec pathfinding en temps réel, visualisation des congestions par code couleur thermique.
-* **Style :** Orange Industriel / Traffic.
+* **Features :** IA de conduite avec pathfinding dynamique, Sliders de densité, Audio ASMR Trafic, Visualisation thermique des bouchons.
+* **Thème :** 🟠 **Orange Industriel**
 
-### 3. 🦠 Turing Fluid (Réaction-Diffusion)
-Une simulation organique basée sur le modèle de Gray-Scott.
-* **Concept :** Comment la nature crée des motifs (rayures de zèbre, taches de léopard, coraux) via la chimie.
-* **Features :** Paramètres *Feed* et *Kill* ajustables en temps réel, presets (Mitose, Corail, Chaos).
-* **Style :** Cyan Néon / Bioluminescence.
+### 3. 🦠 Turing Patterns (Réaction-Diffusion)
+
+*La chimie de la nature.*
+
+* **Concept :** Comment la nature crée des motifs (rayures, taches) via la compétition chimique (Gray-Scott).
+* **Features :** Paramètres *Feed/Kill* en temps réel, Pinceau chimique, Presets (Mitose, Corail).
+* **Thème :** 🔵 **Cyan Bioluminescent**
+
+### 4. 🌌 Fermi Paradox (Le Grand Filtre)
+
+*Sommes-nous seuls dans l'univers ?*
+
+* **Concept :** Simulation de la colonisation galactique et du "Grand Filtre" qui éteint les civilisations.
+* **Features :** Zoom/Pan infini, Génération procédurale de galaxies, Sliders d'expansion et d'extinction.
+* **Thème :** 💠 **Cyan Espace**
+
+### 5. 🌡️ Maxwell's Demon (Entropie)
+
+*Le démon qui défie la thermodynamique.*
+
+* **Concept :** Trier des particules chaudes et froides pour inverser l'entropie.
+* **Features :** Moteur physique de collision, Contrôle de la porte au clic/clavier, Graphiques d'entropie en temps réel.
+* **Thème :** 🟣 **Rose Néon**
+
+### 6. 🏨 Hilbert's Hotel (L'Infini)
+
+*Le vertige des mathématiques.*
+
+* **Concept :** Gérer un hôtel complet avec une infinité de chambres pour accueillir une infinité de nouveaux clients.
+* **Features :** Visualisation de décalages de tableaux infinis, Paradoxe du Bus ().
+* **Thème :** 🟡 **Jaune Cyberpunk**
+
+---
+
+## ✨ Fonctionnalités Globales
+
+* **Audio Procédural :** Aucun fichier MP3. Tous les sons (bips, drones, moteurs) sont synthétisés en temps réel par le navigateur pour une expérience légère et organique.
+* **Immersion :** Chaque projet dispose d'un *Start Screen* contextuel et de pages d'informations pédagogiques ("Archives").
+* **Performance :** Optimisé pour 60 FPS constants.
 
 ---
 
@@ -37,21 +80,9 @@ Une simulation organique basée sur le modèle de Gray-Scott.
 
 * **Core :** HTML5, CSS3, JavaScript (ES6+).
 * **Rendu :** HTML5 `<canvas>` (2D Context).
-* **Design :** CSS Variables, Flexbox/Grid, Animations CSS, Glassmorphism.
-* **Aucune librairie externe :** Tout est codé à la main pour maîtriser la performance et la logique.
-
----
-
-## 🚀 Installation & Utilisation
-
-Ce projet est statique, il ne nécessite aucun backend ni compilation.
-
-1.  **Cloner le dépôt :**
-    ```bash
-    git clone [https://github.com/ton-pseudo/simulation_nexus.git](https://github.com/ton-pseudo/simulation_nexus.git)
-    ```
-2.  **Lancer :**
-    Ouvrez simplement le fichier `index.html` dans votre navigateur web préféré.
+* **Audio :** Web Audio API (Oscillators, GainNodes).
+* **Design :** CSS Variables, Flexbox/Grid, Glassmorphism, Animations CSS.
+* **Zéro Dépendance :** Aucun framework, aucune librairie externe.
 
 ---
 
@@ -59,31 +90,56 @@ Ce projet est statique, il ne nécessite aucun backend ni compilation.
 
 ```text
 simulation_nexus/
-├── index.html           # Le Hub Central (Portail)
-├── creator.html         # Page Créateur Globale
-├── style_hub.css        # Styles du Hub
-├── lifeGame/            # Module Jeu de la Vie
+├── index.html          # LE HUB (Portail d'accès)
+├── style_hub.css       # Styles globaux du Hub
+├── life/               # [Jeu de la Vie]
 │   ├── life.html
 │   ├── script_life.js
 │   └── style_life.css
-├── paradoxBraess/       # Module Trafic (Braess)
+├── braess/             # [Paradoxe de Braess]
 │   ├── braess.html
-│   ├── braess_info.html
 │   ├── script_braess.js
 │   └── style_braess.css
-└── turing/              # Module Chimie (Réaction-Diffusion)
-    ├── reaction.html
-    ├── rd_info.html
-    ├── script_rd.js
-    └── style_rd.css
+├── turing/             # [Réaction-Diffusion]
+│   ├── reaction.html
+│   ├── script_rd.js
+│   └── style_rd.css
+├── fermi/              # [Paradoxe de Fermi]
+│   ├── fermi.html
+│   ├── script_fermi.js
+│   └── style_fermi.css
+├── maxwell/            # [Démon de Maxwell]
+│   ├── maxwell.html
+│   ├── script_maxwell.js
+│   └── style_maxwell.css
+└── hotel/              # [Hôtel de Hilbert]
+    ├── hotel.html
+    ├── script_hotel.js
+    └── style_hotel.css
+
 ```
+
+---
+
+## 🚀 Installation
+
+Ce projet est statique (Client-side only).
+
+1. **Cloner le dépôt :**
+```bash
+git clone https://github.com/cnuddeMatteo/simulation_nexus.git
+
+```
+
+
+2. **Lancer :**
+Ouvrez simplement le fichier `index.html` dans votre navigateur ou utilisez une extension comme *Live Server* pour éviter les problèmes de CORS (notamment pour les modules audio sur certains navigateurs).
+
 ---
 
 ## 👤 Auteur
 
-**Mattéo Cnudde** - *Architecte Numérique & Explorateur de Systèmes*
-
-Passionné par l'intersection entre le code, les mathématiques et la nature.
+**Mattéo Cnudde** - *Etudiant en Informatique*
 
 * [GitHub](https://github.com/cnuddeMatteo)
 * [Buy Me A Coffee](https://buymeacoffee.com/spunnn)
