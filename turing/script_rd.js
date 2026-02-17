@@ -232,6 +232,11 @@ function toggleMenu() {
     const panel = document.getElementById('main-panel');
     panel.classList.toggle('minimized');
 }
+function startLab() {
+    document.getElementById('start-screen').classList.add('hidden');
+    
+    if (!isRunning) toggleSimulation();
+}
 // Resize
 window.addEventListener('resize', init);
 

@@ -8,6 +8,39 @@
 </head>
 <body>
 
+    <div id="start-screen">
+        <div class="traffic-card">
+            <h1 class="traffic-title">BRAESS <span class="blink">PARADOX</span></h1>
+            
+            <p class="mission-brief">
+                Automobilistes égoïstes vs Optimum global.<br>
+                Ajoutez des voitures et observez le réseau s'effondrer.
+            </p>
+
+            <div class="rules-grid">
+                <div class="rule-box selfish">
+                    <i class="fas fa-user-clock"></i>
+                    <h3>ÉQUILIBRE DE NASH</h3>
+                    <p>Chacun optimise son trajet.<br>Résultat : Bouchons.</p>
+                </div>
+                
+                <div class="vs-divider"><i class="fas fa-road"></i></div>
+
+                <div class="rule-box social">
+                    <i class="fas fa-users"></i>
+                    <h3>OPTIMUM GLOBAL</h3>
+                    <p>Parfois, fermer une route<br>accélère le trafic.</p>
+                </div>
+            </div>
+
+            <button class="btn-start" onclick="startTraffic()">
+                <i class="fas fa-car"></i> LANCER LA CIRCULATION
+            </button>
+        </div>
+    </div>
+
+    <canvas id="braess-canvas"></canvas>
+
     <div class="overlay-ui">
         <div class="header">
             <h1 class="neon-title">BRAESS <span class="pulse">PARADOX</span></h1>
@@ -18,45 +51,51 @@
             
             <div class="status-box">
                 <div class="metric">
-                    <span class="label">Temps Moyen</span>
-                    <span class="value" id="avg-time">0.0s</span>
+                    <span class="label">VOITURES</span>
+                    <span class="value" id="car-count">0</span>
                 </div>
                 <div class="metric">
-                    <span class="label">Voitures/min</span>
-                    <span class="value" id="car-count">0</span>
+                    <span class="label">TEMPS MOYEN</span>
+                    <span class="value" id="avg-time">--</span>
+                </div>
+            </div>
+
+            <div id="paradox-status" style="text-align:center; margin-bottom:15px; font-size:0.8rem; color:#aaa;">
+                État : En attente...
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="slider-group">
+                <label><i class="fas fa-tachometer-alt"></i> INTENSITÉ DU TRAFIC</label>
+                <input type="range" id="traffic-slider" min="1" max="100" value="50">
+                <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:#666;">
+                    <span>Calme</span>
+                    <span>Enfer</span>
                 </div>
             </div>
 
             <div class="separator"></div>
 
             <button id="toggle-road-btn" onclick="toggleShortcut()">
-                <i class="fas fa-road"></i> <span id="btn-text">OUVRIR LE RACCOURCI</span>
+                <span id="btn-text">OUVRIR LE RACCOURCI</span>
             </button>
 
             <div class="explanation">
-                <p id="paradox-status">État : <b>Optimal</b></p>
-                <small>Observez le temps moyen augmenter quand vous ajoutez la route !</small>
+                <i class="fas fa-info-circle"></i><br>
+                <small>Astuce : Montez le trafic à 80% puis ouvrez le raccourci pour voir le blocage total.</small>
             </div>
 
             <div class="separator"></div>
 
-            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                <a href="braess_info.html" style="color: #9ca3af; text-decoration: none; font-size: 0.8rem; border-bottom: 1px dashed #9ca3af;">
-                    <i class="fas fa-book"></i> Comprendre
-                </a>
-                <a href="braess_creator.html" style="color: #9ca3af; text-decoration: none; font-size: 0.8rem; border-bottom: 1px dashed #9ca3af;">
-                    <i class="fas fa-user"></i> Créateur
-                </a>
-                
-                <a href="../index.html" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px; margin-top: 5px;">
-                    <i class="fas fa-th-large"></i> Autres projets
-                </a>
+            <div style="text-align: center;">
+                <a href="braess_info.html" class="nav-link">Comprendre</a>
+                <a href="braess_creator.html" class="nav-link">Créateur</a>
+                <br>
+                <a href="../index.html" class="back-link" style="display:inline-block; margin-top:10px;">Retour au Hub</a>
             </div>
-
         </div>
     </div>
-
-    <canvas id="braess-canvas"></canvas>
 
     <script src="script_braess.js"></script>
 </body>

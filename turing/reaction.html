@@ -7,7 +7,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div id="start-screen">
+    <div class="lab-card">
+        <h1 class="lab-title">REACTION <span class="pulse">DIFFUSION</span></h1>
+        
+        <p class="mission-brief">
+            Alan Turing a découvert comment la nature crée des motifs complexes<br>
+            à partir d'une soupe chimique chaotique.
+        </p>
 
+        <div class="rules-grid">
+            <div class="rule-box chem-a">
+                <i class="fas fa-plus-circle"></i>
+                <h3>ACTIVATEUR</h3>
+                <p>Produit plus de lui-même.<br>Crée les taches.</p>
+            </div>
+            
+            <div class="vs-divider"><i class="fas fa-vial"></i></div>
+
+            <div class="rule-box chem-b">
+                <i class="fas fa-minus-circle"></i>
+                <h3>INHIBITEUR</h3>
+                <p>Empêche l'activateur de s'étendre.<br>Crée les espaces.</p>
+            </div>
+        </div>
+
+        <div class="controls-hint">
+            <i class="fas fa-pen-nib"></i> Clic & Glisser : Perturber les produits chimiques
+        </div>
+
+        <button class="btn-start" onclick="startLab()">
+            <i class="fas fa-atom"></i> INJECTER LA SOLUTION
+        </button>
+    </div>
+</div>
     <div class="overlay-ui">
         <div class="header">
             <h1 class="neon-title">TURING <span class="pulse">FLUID</span></h1>
